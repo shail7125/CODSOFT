@@ -8,7 +8,7 @@ int main()
 std::cout<<"NUMBER GUESSING GAME!! \n";
 srand((unsigned int) time(NULL));
 
-int num= (rand()%100)+1; //to select a number between 1-100 for the user Sto guess.
+int num= (rand()%100)+1; //to select a number between 1-100 for the user to guess.
 int guess=0; // the input number that will be taken from user.
 
 std::cout<<"ENTER ANY NUMBER BETWEEN 1-100 \n";
@@ -33,3 +33,4 @@ while(guess!=num);
 
 return 0;
 }
+
