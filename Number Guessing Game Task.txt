@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main()
+{
+    
+std::cout<<"NUMBER GUESSING GAME!! \n";
+srand((unsigned int) time(NULL));
+
+int num= (rand()%100)+1; //to select a number between 1-100 for the user Sto guess.
+int guess=0; // the input number that will be taken from user.
+
+std::cout<<"ENTER ANY NUMBER BETWEEN 1-100 \n";
+  
+//loop to continue guessing game till the user guesses it right.
+do 
+{
+     std::cin >> guess;
+     
+  if(guess>num)
+ std::cout<<"TRY FOR A LOWER NUMBER" << std::endl;
+
+  else if(guess<num)
+std::cout<<"TRY A HIGHER NUMBER" << std::endl;
+
+  else
+std::cout<< "YOU GUESSED IT RIGHT!!" << std::endl;
+
+
+}
+while(guess!=num);
+
+return 0;
+}
