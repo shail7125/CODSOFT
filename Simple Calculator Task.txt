@@ -1,0 +1,35 @@
+#include<iostream>
+
+int main()
+{
+float a,b;
+char op;
+
+std::cout<< "ENTER THE FIRST NUMBER: ";
+std::cin>>a;
+std::cout<< "ENTER THE SECOND NUMBER: ";
+std::cin>>b;
+std::cout<<"ENTER THE OPERATION TO BE PERFORMED i.e. \nADDITION(+)\nSUBTRACTION(-)\nMULTIPLICATION(*)\nDIVISION(/)\n";
+std::cin>>op;
+
+switch(op)
+{
+ case('+'):
+  std::cout<<"RESULT OF A+B IS ="<<a+b;
+  break;
+
+case('-'):
+  std::cout<<"RESULT OF A-B IS="<<a-b;
+  break;
+
+case('*'):
+  std::cout<<"RESULT OF A*B IS="<<a*b;
+  break;
+
+case('/'):
+  std::cout<<"RESULT OF A/B IS="<<a/b;
+  break;
+}
+
+return 0;
+}
