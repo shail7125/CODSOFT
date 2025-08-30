@@ -1,0 +1,72 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main() {
+    vector<string> todoList;  
+    int menuChoice;        
+
+    while (true) {
+        cout << "\n -----TO-DO APP----- \n\n";  
+        cout << "HEY THERE!! READY TO DO SOME DASHING TASKS?\nCOME HAVE A LOOK\n\n";
+        cout << "WHAT DO YOU WANNA DO??\n";
+        cout << "1) Show all tasks\n";
+        cout << "2) Add a new task\n";
+        cout << "3) Remove a task\n";
+        cout << "4) Quit\n";
+        cout << "Select your option: \n";
+        cin >> menuChoice;
+
+        if (menuChoice == 1) {
+            if (todoList.size() == 0) {   
+                cout << "Nothing here yet...\nAdd something and get started";
+            }
+            else 
+            {
+                cout << "\nYour current tasks:\n";
+                for (size_t idx = 0; idx < todoList.size(); idx++) 
+                {
+                    cout << idx + 1 << ") " << todoList[idx] << endl;
+                }
+            }
+        }
+        else if (menuChoice == 2) 
+        {
+            cin.ignore();  
+            string newTask;
+            cout << "Enter your new task: ";
+            getline(cin, newTask);
+
+            if (newTask != "") { 
+                todoList.push_back(newTask);
+            } else {
+                cout << "Oops! You didn't enter anything.\nTry again?!\n";
+            }
+        }
+        else if (menuChoice == 3) {
+           
+            int delIndex;
+            cout << "Which task number do you want off your list?\n ";
+            cin >> delIndex;
+
+            
+            if (delIndex > 0 && delIndex <= (int)todoList.size()) {
+               
+                todoList.erase(todoList.begin() + delIndex - 1);
+                cout << "\nTask removed from the list.\n";
+            } else {
+                cout << "The number that you wrote doesn't exist.";
+            }
+        }
+        else if (menuChoice == 4) {
+            cout << "\nExiting... Have a productive day!\n";
+            break;
+        }
+        else {
+            cout << "Invalid input.\nTry again.\n";
+        }
+    }
+    return 0;
+}
+
